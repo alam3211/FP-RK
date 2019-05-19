@@ -2,6 +2,9 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\User;
+use App\Pengajuan;
+use App\Peminjaman;
+use App\Ruang;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -23,5 +26,35 @@ $factory->define(User::class, function (Faker $faker) {
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
+    ];
+});
+
+$factory->define(Pengajuan::class, function (Faker $faker) {
+    return [
+        'NamaPeminjam'=> $faker->name, 
+        'NRP' => $faker->numberBetween($min = 1000, $max = 9000), 
+        'HP' => $faker->PhoneNumber,
+        'Email' => $faker->unique()->safeemail, 
+        'Organisasi' => $faker->company,
+        'PJ' => $faker->name,
+        'Jabatan' => $faker->jobTitle,
+        'Kegiatan' => $faker->streetName,
+        'Deskripsi' => $faker->text($maxNbChars = 150),
+        'Kategori' => $faker->cityPrefix,
+    ];
+});
+
+$factory->define(Ruang::class, function (Faker $faker) {
+    return [
+        'Ruang' => $faker->state,
+    ];
+});
+
+$factory->define(Peminjaman::class, function (Faker $faker) {
+    return [
+        'ID_Permohonan' => $faker->randomDigitNotNull, 
+        'ID_Ruang' => $faker->randomDigitNotNull, 
+        'JamMulai' => $faker->dateTime($max = 'now', $timezone = null),
+        'JamSelesai' => $faker->dateTime($max = 'now', $timezone = null),
     ];
 });
