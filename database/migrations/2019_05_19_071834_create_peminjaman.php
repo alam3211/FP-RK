@@ -15,8 +15,8 @@ class CreatePeminjaman extends Migration
     {
         Schema::create('peminjaman', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->int('ID_Permohonan');
-            $table->int('ID_Ruang');
+            $table->integer('ID_Permohonan');
+            $table->integer('ID_Ruang');
             $table->dateTime('JamMulai');
             $table->dateTime('JamSelesai');
             $table->timestamps();
