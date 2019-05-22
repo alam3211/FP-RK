@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->group(function () {
 	Route::prefix('pengajuan')->group(function () {
 		Route::get('{id}', 'PengajuanController@show_detail');
+		Route::get('acc/{id}', 'PengajuanController@accept');
+		Route::get('rej/{id}', 'PengajuanController@reject');
 	});
 	Route::get('', 'PengajuanController@index');
     Route::get('edit/{id}', 'PeminjamanController@show_detail')->name('show_detail');

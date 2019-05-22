@@ -29,4 +29,40 @@ class PengajuanController extends Controller
         }
         return view('detail_pengajuan',$data);
     }
+
+    public function accept($id)
+    {
+        $query = Pengajuan::find($id);
+        $query->Status = 'DITERIMA';
+        $query->save();
+
+        $data['query'] = Pengajuan::find($id);
+        $data['ruang'] = array();
+        $data['peminjaman'] = Peminjaman::where('ID_Permohonan', $id)->get();
+        // dd($data['peminjaman']);
+        foreach ($data['peminjaman'] as $key => $value) {
+            $ruangan = Ruang::find($value->ID_Ruang)->Ruang;
+            // dd($ruangan);
+            array_push($data['ruang'], $ruangan);
+        }
+        return view('detail_pengajuan',$data);
+    }
+
+    public function reject($id)
+    {
+        $query = Pengajuan::find($id);
+        $query->Status = 'DITOLAK';
+        $query->save();
+
+        $data['query'] = Pengajuan::find($id);
+        $data['ruang'] = array();
+        $data['peminjaman'] = Peminjaman::where('ID_Permohonan', $id)->get();
+        // dd($data['peminjaman']);
+        foreach ($data['peminjaman'] as $key => $value) {
+            $ruangan = Ruang::find($value->ID_Ruang)->Ruang;
+            // dd($ruangan);
+            array_push($data['ruang'], $ruangan);
+        }
+        return view('detail_pengajuan',$data);
+    }
 }

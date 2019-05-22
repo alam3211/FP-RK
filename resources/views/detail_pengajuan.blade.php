@@ -143,7 +143,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-danger">Tolak Reservasi</button>
+        <a href="/admin/pengajuan/rej/{{$query->id}}"><button type="button" class="btn btn-danger">Tolak Reservasi</button></a>
       </div>
     </div>
     <!-- /.modal-content -->
@@ -164,7 +164,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-success">Terima Reservasi</button>
+        <a href="/admin/pengajuan/acc/{{$query->id}}"><button type="button" class="btn btn-success">Terima Reservasi</button></a>
       </div>
     </div>
     <!-- /.modal-content -->
