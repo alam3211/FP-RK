@@ -11,7 +11,7 @@
     @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Nama Peminjam</label>
-    <input type="text" class="form-control" name="nama" id="nama" value="{{ $query->pengajuan()->first()->NamaPeminjam }}">
+    <input required  type="text" class="form-control" name="nama" id="nama" value="{{ $query->pengajuan()->first()->NamaPeminjam }}">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">NRP/NIP</label>
