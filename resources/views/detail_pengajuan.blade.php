@@ -13,6 +13,7 @@
       <div class="box-header with-border">
         <h3 class="box-title">Detail Pengajuan Reservasi #{{$query->id}}</h3>
         <span class="pull-right badge bg-blue">{{$query->Status}}</span>
+        <span class="pull-right"><a href="{{ route('edit',1) }}" type="button" class="btn btn-warning">Edit Reservasi</a></span>
       </div>
       <div class="box-body">
         <div class="box-body">
