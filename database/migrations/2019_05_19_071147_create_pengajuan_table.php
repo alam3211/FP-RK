@@ -25,6 +25,7 @@ class CreatePengajuanTable extends Migration
             $table->string('Kegiatan');
             $table->string('Deskripsi');
             $table->string('Kategori');
+            $table->string('Status');
             $table->timestamps();
         });
     }
