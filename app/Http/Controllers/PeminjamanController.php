@@ -42,10 +42,9 @@ class PeminjamanController extends Controller
         $query->save();
         $query->pengajuan->save();
 
-        $query->JamMulai = DateTime::createFromFormat('Y-m-d H:i:s',$query->JamMulai);
-        $query->JamSelesai = DateTime::createFromFormat('Y-m-d H:i:s',$query->JamSelesai);
+        $query->JamMulai = DateTime::createFromFormat('Y-m-d H:i',$query->JamMulai);
+        $query->JamSelesai = DateTime::createFromFormat('Y-m-d H:i',$query->JamSelesai);
 
-        dd($query->JamMulai->format(""));
         $ruang = Ruang::all();
 
         return view('edit',compact('query','ruang'));
