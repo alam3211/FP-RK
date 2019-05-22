@@ -8,13 +8,6 @@ use App\Pengajuan;
 class PeminjamanController extends Controller
 {
     //
-    public function index()
-    {
-        $query = Pengajuan::All();
-        // dd($query);
-        return view('dashboard',compact('query'));
-    }
-
     public function show_detail($id)
     {
         $query = Peminjaman::find($id);
