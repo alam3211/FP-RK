@@ -12,7 +12,7 @@
     <div class="box">
       <div class="box-header with-border">
         <h3 class="box-title">Detail Pengajuan Reservasi #{{$query->id}}</h3>
-        <span class="pull-right badge bg-blue">{{$query->Status}}</span>
+        <span class="badge bg-blue">{{$query->Status}}</span>
         <span class="pull-right"><a href="{{ route('edit',1) }}" type="button" class="btn btn-warning">Edit Reservasi</a></span>
       </div>
       <div class="box-body">
@@ -102,6 +102,16 @@
             </div>
             <div class="col-md-9">
               : {{$query->Status}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <strong>Ruangan yang Dipinjam</strong>
+            </div>
+            <div class="col-md-9">
+              : @foreach($ruang as $key => $value)
+              <strong>{{$value}}</strong> untuk pemakaian tanggal <strong>{{$peminjaman[$key]->JamMulai}}</strong> hingga <strong>{{$peminjaman[$key]->JamSelesai}}</strong><br/>
+              @endforeach
             </div>
           </div>
           <div class="row pt-4">

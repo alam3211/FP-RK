@@ -24,6 +24,7 @@ class Pengajuan extends Model
         'Kegiatan',
         'Deskripsi',
         'Kategori',
+        'Status'
     ];
 
     public function peminjaman()
