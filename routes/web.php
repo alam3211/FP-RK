@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FormController@index');
+Route::post('/ajuan', 'FormController@ajuan');
 
 Auth::routes();
 
