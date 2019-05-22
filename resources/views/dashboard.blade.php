@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard Admin')
+@section('title', 'Dashboard Admin - ReservasiIF')
 
 @section('content_header')
     <h1>Dashboard<small>Reservasi IF</small></h1>
