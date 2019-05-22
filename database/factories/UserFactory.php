@@ -41,6 +41,7 @@ $factory->define(Pengajuan::class, function (Faker $faker) {
         'Kegiatan' => $faker->streetName,
         'Deskripsi' => $faker->text($maxNbChars = 150),
         'Kategori' => $faker->cityPrefix,
+        'Status' => $faker->word,
     ];
 });
 

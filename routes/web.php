@@ -19,6 +19,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function () {
+	Route::prefix('pengajuan')->group(function () {
+		Route::get('{id}', 'PengajuanController@show_detail');
+	});
+	Route::get('', 'PengajuanController@index');
     Route::get('edit/{id}', 'PeminjamanController@show_detail')->name('show_detail');
     Route::post('edit/{id}', 'PeminjamanController@edit')->name('edit');
 });
