@@ -12,7 +12,7 @@ class PeminjamanController extends Controller
     //
     public function show_detail($id)
     {
-        $query = Peminjaman::find($id);
+        $query = Peminjaman::where('ID_Permohonan',$id)->first();
         $query->JamMulai = DateTime::createFromFormat('Y-m-d H:i:s',$query->JamMulai);
         $query->JamSelesai = DateTime::createFromFormat('Y-m-d H:i:s',$query->JamSelesai);
         $ruang = Ruang::all();

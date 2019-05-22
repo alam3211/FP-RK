@@ -12,6 +12,9 @@
     <div class="box">
       <div class="box-header with-border">
         <h3 class="box-title">Detail Pengajuan Reservasi #{{$query->id}}</h3>
+        @if($errors->any())
+        <span class="badge bg-red">{{$errors->first()}}</span>
+        @endif
         <span class="badge bg-blue">{{$query->Status}}</span>
         <span class="pull-right"><a href="{{ route('edit',$query->id) }}" type="button" class="btn btn-warning">Edit Reservasi</a></span>
       </div>
