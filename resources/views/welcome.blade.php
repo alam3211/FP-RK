@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>RESERVASI IF ITS</title>
+    <title>RESERVASI RUANGAN IF ITS</title>
 </head>
 
-<body style="background-color: #0055c4">
+<body style="background-color: black">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Reservasi IF ITS</a>
+        <a class="navbar-brand" href="#"><b>Reservasi Ruangan IF ITS</a></b>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,47 +31,47 @@
                     @csrf
                     <div class="form-group">
                         <label for="namapeminjam">Nama Peminjam</label>
-                        <input name="namapeminjam" type="text" class="form-control" id="namapeminjam"
+                        <input required  name="namapeminjam" type="text" class="form-control" id="namapeminjam"
                             placeholder="Nama Peminjam">
                     </div>
                     <div class="form-group">
                         <label for="nrp">NRP/NIP</label>
-                        <input name="nrp" type="text" class="form-control" id="nrp" placeholder="NRP / NIP">
+                        <input required  name="nrp" type="text" class="form-control" id="nrp" placeholder="NRP / NIP">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Email</label>
-                            <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            <input required  name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="hp">HP</label>
-                            <input name="HP" type="text" class="form-control" id="hp" placeholder="0853...">
+                            <input required  name="HP" type="text" class="form-control" id="hp" placeholder="0853...">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="organisasi">Organisasi yang diwakilkan</label>
-                        <input name="organisasi" type="text" class="form-control" id="organisasi"
+                        <input required  name="organisasi" type="text" class="form-control" id="organisasi"
                             placeholder="Himpunan, BEM, Lab, dan lainnya">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="PJ">Penanggung Jawab</label>
-                            <input name="PJ" type="text" class="form-control" id="PJ">
+                            <input required  name="PJ" type="text" class="form-control" id="PJ">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="Jabatan">Jabatan</label>
-                            <input name="Jabatan" type="text" class="form-control" id="Jabatan">
+                            <input required  name="Jabatan" type="text" class="form-control" id="Jabatan">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="Kegiatan">Nama Kegiatan</label>
-                        <input name="Kegiatan" type="text" class="form-control" id="Kegiatan"
+                        <input required  name="Kegiatan" type="text" class="form-control" id="Kegiatan"
                             placeholder="Nama Kegiatan">
                     </div>
                     <div class="form-group">
                         <label for="Deskripsi">Deskripsi Kegiatan</label>
-                        <input name="Deskripsi" type="text" class="form-control" id="Deskripsi" placeholder="Deskripsi">
+                        <input required  name="Deskripsi" type="text" class="form-control" id="Deskripsi" placeholder="Deskripsi">
                     </div>
                     <div class="form-group">
                         <label for="kategori">Kategori</label>
@@ -86,10 +86,10 @@
                     </div>
 
                     <h5>Ruangan yang dipinjam</h5>
-                    <a class="btn btn-primary" onclick="tambah()">Tambah Ruangan</a>
+                    <a class="btn btn-primary btn-sm" style="color:white" onclick="tambah()">Tambah Ruangan</a>
                     <div id="peminjamanslot">
-                        <div id="peminjaman">
-                            <div class="form-row">
+                        <div id="peminjaman1">
+                            <div class="form-row" id="isinya">
                                 <div class="form-group col-md-3">
                                     <small>Ruangan</small>
                                     <select name="ruangan[]" id="ruangan" class="form-control">
@@ -100,15 +100,15 @@
                                 </div>
                                 <div class="form-group col-md-3">
                                     <small>Tanggal</small>
-                                    <input class="form-control" type="date" name="Tanggal[]">
+                                    <input required  class="form-control" type="date" name="Tanggal[]">
                                 </div>
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-2">
                                     <small>Jam Mulai</small>
-                                    <input class="form-control" type="time" name="Mulai[]">
+                                    <input required  class="form-control" type="time" name="Mulai[]">
                                 </div>
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-2">
                                     <small>Jam Selesai</small>
-                                    <input class="form-control" type="time" name="Selesai[]">
+                                    <input required  class="form-control" type="time" name="Selesai[]">
                                 </div>
                             </div>
                         </div>
@@ -120,7 +120,6 @@
             </div>
         </div>
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -135,8 +134,16 @@
 </body>
 
 <script>
+var c = 2;
+
+function hapus(id){
+    var temp = "peminjaman"+id.toString();    
+    document.getElementById(temp).innerHTML='';
+}
+
 function tambah(){
-     document.getElementById('peminjamanslot').innerHTML = document.getElementById('peminjamanslot').innerHTML + document.getElementById('peminjaman').innerHTML;
- }
+    document.getElementById('peminjamanslot').innerHTML = document.getElementById('peminjamanslot').innerHTML + '<div id="peminjaman'+c+'"><div class="form-row">'+ document.getElementById('isinya').innerHTML +'<div class="form-group col-md-1"><small style="color:white">Hapus?</small><a class="btn btn-danger btn-sm" style="color:white" onclick="hapus('+c+')">Hapus</a></div>'+'</div></div>';
+    c = c+1;
+}
  </script>
 </html>

@@ -11,11 +11,11 @@
     @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Nama Peminjam</label>
-    <input type="text" class="form-control" name="nama" id="nama" value="{{ $query->pengajuan()->first()->NamaPeminjam }}">
+    <input required  type="text" class="form-control" name="nama" id="nama" value="{{ $query->pengajuan()->first()->NamaPeminjam }}">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Pilihan Ruang</label>
-    <input type="text" class="form-control" name="ruang" id="ruang" value="{{ $query->ruang()->first()->Ruang }}">
+    <input required  type="text" class="form-control" name="ruang" id="ruang" value="{{ $query->ruang()->first()->Ruang }}">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
