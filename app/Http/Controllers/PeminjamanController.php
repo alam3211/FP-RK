@@ -4,14 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Peminjaman;
+use App\Pengajuan;
 class PeminjamanController extends Controller
 {
     //
+    public function index()
+    {
+        $query = Pengajuan::All();
+        // dd($query);
+        return view('dashboard',compact('query'));
+    }
 
     public function show_detail($id)
     {
         $query = Peminjaman::find($id);
-        
+        // dd($query);
         return view('edit',compact('query'));
     }
 
