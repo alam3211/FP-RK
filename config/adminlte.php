@@ -118,8 +118,6 @@ return [
             'text'        => 'List Reservasi',
             'url'         => 'admin',
             'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
         ],
     ],
 

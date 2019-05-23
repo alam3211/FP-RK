@@ -83,7 +83,7 @@
           <input value="{{ $query->JamSelesai->format('H:i') }}" class="form-control" type="time" name="Selesai[]">
       </div>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-block btn-primary">Ubah Data Reservasi</button>
 </form>
 @stop
 
