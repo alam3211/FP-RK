@@ -142,7 +142,7 @@ function hapus(id){
 }
 
 function tambah(){
-    document.getElementById('peminjamanslot').innerHTML = document.getElementById('peminjamanslot').innerHTML + '<div id="peminjaman'+c+'"><div class="form-row">'+ document.getElementById('isinya').innerHTML +'<div class="form-group col-md-1"><small style="color:white">Hapus?</small><a class="btn btn-danger btn-sm" style="color:white" onclick="hapus('+c+')">Hapus</a></div>'+'</div></div>';
+    document.getElementById('peminjamanslot').innerHTML = document.getElementById('peminjamanslot').innerHTML + '<hr><div id="peminjaman'+c+'"><div class="form-row">'+ document.getElementById('isinya').innerHTML +'<div class="form-group col-md-1"><small style="color:white">Hapus?</small><a class="btn btn-danger btn-sm" style="color:white" onclick="hapus('+c+')">Hapus</a></div>'+'</div></div>';
     c = c+1;
 }
  </script>
